@@ -1,2 +1,3 @@
-# Python-Crash-Course
-Content assisting students learning Python from scratch
+# Python Crash Course
+
+Content assisting students learning Python from scratch.
