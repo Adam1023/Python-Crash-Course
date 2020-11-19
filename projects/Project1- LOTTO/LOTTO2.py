@@ -113,7 +113,7 @@ def value_is_in_list(chiffre, liste):
     :param liste: contient une liste de int
     :return: True si le chiffre se trouve dans la liste, sinon False.
     """
-    pass  # pass veut tout simplement dire passe cette ligne. Retire là quand tu vas commencer à écrire le code
+    return chiffre in liste
 
 
 def supprime_element_de_liste(element, liste):
@@ -128,7 +128,12 @@ def supprime_element_de_liste(element, liste):
     :param liste: la liste qui contient l'élément à supprimer
     :return: une nouvelle liste identique à "liste", mais sans "element"
     """
-    pass
+    liste2 = []
+    for elem in liste:
+        if elem != element:
+            liste2.append(elem)
+
+    return liste2
 
 
 def is_game_over(money, liste):
@@ -137,7 +142,7 @@ def is_game_over(money, liste):
     "liste", qui est donc la liste contenant les chiffres restants à deviner.
     Si il n'y a plus d'argent ou que la liste est vide, alors cette fonction doit renvoyer True. Sinon False.
     """
-    pass
+    return money < 0 or len(liste) == 0
 
 
 ##################################
@@ -177,7 +182,7 @@ def start_game():
             print("Votre cash est désormais de", flous, "euro")
 
         elif value_is_in_list(chiffre_choisis, liste_de_chiffres) == False:
-            flous = flous // 2
+            flous = flous - flous // 10
             print("Manqué, il vous reste", flous, "euro !")
 
             nombre_chiffres_restants = len(liste_de_chiffres)
